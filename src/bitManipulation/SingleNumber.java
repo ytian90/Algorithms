@@ -39,10 +39,10 @@ public class SingleNumber {
 	}
 	// Solution 3: XOR
 	public int singleNumber3(int[] nums) {
-		int num = 0;
+		int res = 0;
 		for (int x: nums) {
-			num ^= x;
+			res ^= x;
 		}
-		return num;
+		return res;
 	}
 }

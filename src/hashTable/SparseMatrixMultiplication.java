@@ -2,6 +2,7 @@ package hashTable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * 311. Sparse Matrix Multiplication
@@ -24,6 +25,34 @@ public class SparseMatrixMultiplication {
         }
         return C;
     }
+	
+	public static int[][] multiply2(int[][] A, int[][] B) {
+		int a = A.length, b = A[0].length, c = B[0].length;
+		int[][] C = new int[a][c];
+		List[] index = new List[a];
+		for (int i = 0; i < a; i++) {
+			List<Integer> list = new ArrayList<>();
+			for (int j = 0; j < b; j++) {
+				if (A[i][j] != 0) {
+					list.add(j);
+					list.add(A[i][j]);
+				}
+			}
+			index[i] = list;
+		}
+		for (int i = 0; i < a; i++) {
+			List<Integer> list = index[i];
+			for (int p = 0; p < list.size() - 1; p += 2) {
+				int col = list.get(p);
+				int val1 = list.get(p + 1);
+				for (int j = 0; j < c; j++) {
+					int val2 = B[col][j];
+					C[i][j] += val1 * val2;
+				}
+			}
+		}
+		return C;
+	}
 	
 	public static void main(String[] args) {
 //		int[][] A = new int[][]{{1, 0, 0}, {-1, 0, 3}};
@@ -57,7 +86,7 @@ public class SparseMatrixMultiplication {
 	}
 	
 	// assume A and B are sparse vector
-	public static int multiply2(int[][] A, int[][] B) {
+	public static int multiply3(int[][] A, int[][] B) {
 		int a = A.length, b = A[0].length, c = B[0].length;
 		ArrayList<ArrayList<Integer>> va = new ArrayList<>();
 		for (int i = 0; i < a; i++) {

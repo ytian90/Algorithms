@@ -5,7 +5,7 @@ package bitManipulation;
  * @since Aug 29, 2015
  */
 public class SingleNumber3 {
-	public int[] singleNumber(int[] nums) {
+	public static int[] singleNumber(int[] nums) {
 		// Pass 1:
 		// Get the XOR of the two numbers we need to find
 		int diff = 0;
@@ -24,5 +24,11 @@ public class SingleNumber3 {
 				rets[1] ^= num;
 		}
 		return rets;
+	}
+	
+	public static void main(String[] args) {
+		for (int i: singleNumber(new int[]{1, 2, 1, 3, 2, 5})) {
+			System.out.print(i + " ");
+		}
 	}
 }
