@@ -10,9 +10,10 @@ import java.util.Stack;
  * @since Aug 11, 2015
  */
 public class BSTIterator {
-	private static Stack<TreeNode> stack = new Stack<>();
+	private static Stack<TreeNode> stack;
 	
 	public BSTIterator(TreeNode root) {
+		stack = new Stack<>();
         pushLeftChildren(root);
     }
 
@@ -31,7 +32,7 @@ public class BSTIterator {
     /** @return the next smallest number */
     public static int next() {
     	// don't forget hasNext() 's ()
-        if (!hasNext()) throw new NoSuchElementException("All nodes have been visited.");
+//        if (!hasNext()) throw new NoSuchElementException("All nodes have been visited.");
         TreeNode res = stack.pop();
         pushLeftChildren(res.right);
         return res.val;

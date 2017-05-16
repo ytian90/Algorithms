@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Zigzag Iterator 2
+ * 281 Follow Up: Zigzag Iterator 2
  * 
  * @author yutian
  * @since Jan 19, 2016

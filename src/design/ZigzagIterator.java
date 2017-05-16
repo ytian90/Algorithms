@@ -22,9 +22,9 @@ public class ZigzagIterator {
 
     public int next() {
         Iterator poll = list.remove();
-        int result = (Integer) poll.next();
+        int res = (int) poll.next();
         if (poll.hasNext()) list.add(poll);
-        return result;
+        return res;
     }
 
     public boolean hasNext() {
