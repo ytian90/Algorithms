@@ -25,7 +25,7 @@ public class NextGreaterElement2 {
     }
 
 	public static void main(String[] args) {
-		System.out.println(nextGreaterElements(new int[]{1, 2, 1}));
+		System.out.println(Arrays.toString(nextGreaterElements(new int[]{1, 2, 1})));
 	}
 
 }
