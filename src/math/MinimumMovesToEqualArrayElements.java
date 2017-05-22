@@ -1,4 +1,5 @@
 package math;
+
 /**
  * 453. Minimum Moves to Equal Array Elements
  * @author yutian

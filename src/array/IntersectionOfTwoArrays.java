@@ -27,12 +27,7 @@ public class IntersectionOfTwoArrays {
 				intersect.add(nums2[i]);
 			}
 		}
-		int[] result = new int[intersect.size()];
-		int i = 0;
-		for (Integer c : intersect) {
-			result[i++] = c;
-		}
-		return result;
+		return intersect.stream().mapToInt(i->i).toArray();
 	}
 	
 	// sort both arrays, two pointers O(nlogn)
@@ -40,8 +35,7 @@ public class IntersectionOfTwoArrays {
 		Set<Integer> intersect = new HashSet<>();
 		Arrays.sort(nums1);
 		Arrays.sort(nums2);
-		int i = 0;
-		int j = 0;
+		int i = 0, j = 0;
 		while (i < nums1.length && j < nums2.length) {
 			if (nums1[i] < nums2[j]) {
 				i++;
@@ -52,12 +46,7 @@ public class IntersectionOfTwoArrays {
 				i++; j++;
 			}
 		}
-		int[] result = new int[intersect.size()];
-		i = 0;
-		for (Integer c : intersect) {
-			result[i++] = c;
-		}
-		return result;
+		return intersect.stream().mapToInt(t->t).toArray();
 	}
 	
 	// binary search time 
@@ -69,13 +58,7 @@ public class IntersectionOfTwoArrays {
 				intersect.add(n);
 			}
 		}
-		
-		int[] result = new int[intersect.size()];
-		int i = 0;
-		for (Integer c : intersect) {
-			result[i++] = c;
-		}
-		return result;
+		return intersect.stream().mapToInt(i->i).toArray();
 	}
 	
 	// self implemented binary search
