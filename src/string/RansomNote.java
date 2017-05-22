@@ -6,7 +6,7 @@ package string;
  */
 public class RansomNote {
 	
-	public boolean canConstruct(String ransomNote, String magazine) {
+	public static boolean canConstruct(String ransomNote, String magazine) {
         int[] a = new int[26];
         for (int i = 0; i < magazine.length(); i++) {
         	a[magazine.charAt(i) - 'a']++;
@@ -20,7 +20,9 @@ public class RansomNote {
     }
 
 	public static void main(String[] args) {
-
+		System.out.println(canConstruct("a", "b"));
+		System.out.println(canConstruct("aa", "ab"));
+		System.out.println(canConstruct("aa", "aab"));
 	}
 
 }
