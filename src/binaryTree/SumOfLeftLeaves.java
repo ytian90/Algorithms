@@ -1,6 +1,7 @@
 package binaryTree;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * 404. Sum of Left Leaves
@@ -25,7 +26,7 @@ public class SumOfLeftLeaves {
 	public static int sumOfLeftLeaves2(TreeNode root) {
 		if (root == null) return 0;
 		int res = 0;
-		Stack<TreeNode> stack = new Stack<>();
+		Deque<TreeNode> stack = new ArrayDeque<>();
 		stack.push(root);
 		while (!stack.isEmpty()) {
 			TreeNode node = stack.pop();

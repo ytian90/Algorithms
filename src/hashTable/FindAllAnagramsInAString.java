@@ -11,9 +11,9 @@ import java.util.List;
 public class FindAllAnagramsInAString {
 	
 	public static List<Integer> findAnagrams(String s, String p) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         if (s == null || s.length() == 0 || p == null || p.length() == 0) {
-        	return list;
+        	return res;
         }
         int[] map = new int[256];
         for (Character c : p.toCharArray()) {
@@ -23,11 +23,11 @@ public class FindAllAnagramsInAString {
         while (right < s.length()) {
         	// move right pointer, if Character exists (>= 1), reduce count & map's counter by 1
         	if (map[s.charAt(right++)]-- >= 1) count--;
-        	if (count == 0) list.add(left);
+        	if (count == 0) res.add(left);
         	if (right - left == p.length() && map[s.charAt(left++)]++ >= 0)
         		count++;
         }
-        return list;
+        return res;
     }
 	
 
