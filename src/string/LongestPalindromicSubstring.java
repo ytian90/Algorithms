@@ -1,6 +1,6 @@
 package string;
 /**
- * Longest Palindromic Substring
+ * 5. Longest Palindromic Substring
  * @author yutian
  * @since Jul 25, 2015
  */
@@ -53,10 +53,10 @@ public class LongestPalindromicSubstring {
 	}
 
 	public static void main(String[] args) {
-		String s = "abacdfgdcaba";
-		String test2 = "bb";
-		String test3 = "a";
-		System.out.println(longestPalindrome(test2).toString());
+		System.out.println(longestPalindrome("abacdfgdcaba").toString());
+		System.out.println(longestPalindrome("bb").toString());
+		System.out.println(longestPalindrome("a").toString());
+		System.out.println(longestPalindrome("babad").toString());
 	}
 
 }
